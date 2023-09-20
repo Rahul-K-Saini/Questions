@@ -39,4 +39,32 @@ public class FindDuplicates287 {
        return 0;
     }
 
+    // O(n) good
+    public static int findDuplicate3(int[] nums) {
+        int len = nums.length;
+        int[] cnt = new int[len + 1];
+        for (int i = 0; i < len; i++) {
+            cnt[nums[i]]++;
+            if (cnt[nums[i]] > 1) {
+                return nums[i];
+            }
+        }
+
+        return len;
+    }
+
+    // Visited better sol O(n)
+    public static int findDuplicate_mark(int[] nums) {
+        int len = nums.length;
+        for (int num : nums) {
+            int idx = Math.abs(num);
+            if (nums[idx] < 0) {
+                return idx;
+            }
+            nums[idx] = -nums[idx];
+        }
+
+        return len;
+    }
+
 }
