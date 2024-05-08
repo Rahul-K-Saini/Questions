@@ -2,7 +2,7 @@ package LeetCode;
 
 public class MergeInBetweenLinkedLists {
     public static void main(String[] args) {
-        ListNode head = ListNode.getList();
+        ListNode head = ListNode.getList(10);
         ListNode node = new ListNode(11);
         node.next = new ListNode(12);
         node.next.next = new ListNode(13);
